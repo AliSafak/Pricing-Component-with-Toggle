@@ -1,0 +1,248 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    background: url("../img/backgrodund\ img.svg")no-repeat;
+    background-position: right;
+    background-size: cover;
+    background-color: #f7f7fe;
+    font-family: "Montserrat";
+    text-align: center;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/* ----------------------------------------------------------- */
+.switch {
+    appearance: none;
+    background-color: #CFD8EF;
+    height: 22px;
+    width: 35px;
+    display: inline-flex;
+    margin: 0;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 4px;
+    transition: all .8s ease-in-out;
+    cursor: pointer;
+    margin-inline: 24px;
+}
+
+.switch:after {
+    content: "";
+    background-color: white;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    transition: transform 0.4s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.switch:checked {
+    background-color: #7AEADF;
+}
+
+.switch:checked:after {
+    transform: translateX(100%);
+}
+
+
+.container {
+    padding: 31px 29px;
+}
+
+.container > h1 {
+    display: block;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48.76px;
+    letter-spacing: -1.2000000476837158px;
+    color: #4A4D60;
+    display: flex;
+    align-items: center;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: center;
+    border-bottom: 1px solid rgba(110, 114, 142, 0.25);
+    padding-block: 12px;
+}
+
+:where(h1) span {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 71px;
+    letter-spacing: -2.1600000858306885px;
+}
+
+label {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.pricing h2 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 15.85px;
+    letter-spacing: 1.3928571939468384px;
+    padding-block: 14px;
+    border-radius: 6px;
+    color: #6D72DE;
+    background-color: #797de2;
+    cursor: pointer;
+    margin-block: 32px;
+    color: white;
+}
+
+.pricing {
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.basic,
+.professional,
+.master {
+    padding: 31px 29px;
+    border-radius: 10px;
+    margin-block: 32px;
+}
+
+.storage {
+    border-top: 1px solid rgba(110, 114, 142, 0.25);
+}
+
+
+.basic,
+.master {
+    background-color: white;
+    color: #6E728E;
+}
+
+.professional {
+    background-color: #9397eb;
+    color: white;
+}
+
+.professional button {
+    background-color: white;
+    color: #6D72DE;
+}
+
+.professional :where(h1) {
+    color: white;
+}
+
+.basic button:hover,
+.master button:hover {
+    background-color: white;
+    border: 1px solid #6d72de;
+    color: #6d72de;
+}
+
+.professional button:hover {
+    color: white;
+    background-color: #7378e0;
+    border: 1px solid white;
+}
+
+@media(width>1050px) {
+    .pricing {
+        display: flex;
+        max-width: 1050px;
+        margin-inline: auto;
+        align-items: center;
+    }
+
+    .basic,
+    .professional,
+    .master {
+        width: 350px;
+    }
+
+    .professional {
+        height: 501px;
+    }
+    
+
+    .container {
+        margin-top: 100px;
+    }
+}
